@@ -1,127 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jake | Developer, Designer & Footballer</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    /* Gradient background animation */
-    @keyframes gradient {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-
-    /* Applying gradient animation */
-    body {
-      background: linear-gradient(45deg, #1e40af, #4338ca, #6366f1);
-      background-size: 400% 400%;
-      animation: gradient 15s ease infinite;
-    }
-
-    /* Adding smooth fade-in effect */
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 2s forwards;
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-
-    /* Adding a soft shadow for text */
-    h2, h3, p {
-      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
-    }
-  </style>
+  <title>Jake | Web & Game Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="text-white font-sans">
-
-  <!-- Navbar -->
-  <nav class="bg-gray-800 p-4 shadow-md">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-indigo-400 fade-in">Jake</h1>
-      <ul class="flex space-x-6 fade-in">
-        <li><a href="#about" class="hover:text-indigo-300">About</a></li>
-        <li><a href="#portfolio" class="hover:text-indigo-300">Portfolio</a></li>
-        <li><a href="#contact" class="hover:text-indigo-300">Contact</a></li>
+<body class="bg-white text-gray-800 font-sans">
+  <!-- Header -->
+  <header class="p-6 shadow-md flex justify-between items-center">
+    <h1 class="text-2xl font-bold">Jake</h1>
+    <nav>
+      <ul class="flex gap-6 text-sm">
+        <li><a href="#projects" class="hover:text-blue-600">Projects</a></li>
+        <li><a href="#services" class="hover:text-blue-600">Services</a></li>
+        <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
       </ul>
-    </div>
-  </nav>
-
-  <!-- About Section -->
-  <section id="about" class="py-16 px-6 fade-in">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-4xl font-bold text-indigo-400 mb-6">Hey, I’m Olabiyi Joshua Timileyin — but you can call me Jake.</h2>
-      <p class="text-lg mb-4">
-        I’m a passionate creator, tech enthusiast, and future-forward thinker. At just 16, I’m already building a name for myself as a 
-        <span class="text-indigo-300 font-semibold">graphic designer</span>, <span class="text-indigo-300 font-semibold">game developer</span>, 
-        and aspiring entrepreneur.
-      </p>
-      <p class="text-lg mb-4">
-        I code fun games like <strong>Snake</strong> with sound, levels, mobile controls—and I’m building a Subway Surfers-style game from scratch.
-      </p>
-      <p class="text-lg mb-4">
-        I’m also developing an online store for selling phone accessories and tech gear, inspired by the Jumia app.
-      </p>
-      <p class="text-lg mb-4">
-        I explore the crypto space through <span class="text-green-400">Binance</span>, <span class="text-green-400">Trust Wallet</span>, and 
-        <span class="text-green-400">Ari Wallet</span>.
-      </p>
-      <p class="text-lg mb-4">
-        I’m currently studying Chemical Engineering at OAUSTECH, bringing creativity and strategy into everything I do.
-      </p>
-      <p class="text-lg mb-4">
-        Off the screen, I’m on the field — I love playing football and I proudly play as a <span class="text-yellow-300 font-semibold">left winger</span>, 
-        using speed and skill to change the game.
-      </p>
-      <p class="text-xl font-semibold text-yellow-300">If you're looking for innovation, energy, and creativity—remember the name: Jake.</p>
-    </div>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="py-16 bg-gray-800 px-6 fade-in">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-indigo-400 mb-8">My Projects</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-gray-700 p-4 rounded-xl shadow-md hover:shadow-2xl transition duration-300 ease-in-out">
-          <h3 class="text-xl font-semibold text-white">Snake Game</h3>
-          <p class="text-gray-300 mt-2">Classic Snake game with music, levels, mobile controls, and a high score system.</p>
-        </div>
-        <div class="bg-gray-700 p-4 rounded-xl shadow-md hover:shadow-2xl transition duration-300 ease-in-out">
-          <h3 class="text-xl font-semibold text-white">Subway Surfer-Style Game (Coming Soon)</h3>
-          <p class="text-gray-300 mt-2">Endless runner game in development using web technologies.</p>
-        </div>
+    </nav>
+  </header>  <!-- Hero -->  <section class="text-center py-20 px-4">
+    <h2 class="text-4xl font-bold mb-4">Hi, I'm Jake</h2>
+    <p class="text-lg text-gray-600">I build stunning websites, games & graphics</p>
+    <a href="#projects" class="mt-6 inline-block bg-blue-600 text-white px-6 py-2 rounded-xl hover:bg-blue-700">See My Work</a>
+  </section>  <!-- About -->  <section class="max-w-3xl mx-auto px-6 py-10">
+    <h3 class="text-2xl font-semibold mb-4">About Me</h3>
+    <p class="text-gray-700">I'm a creative web and game developer with experience in building custom websites, games, and graphics. I use tools like HTML, CSS, JavaScript, and design software to bring ideas to life.</p>
+  </section>  <!-- Projects -->  <section id="projects" class="bg-gray-50 py-10 px-6">
+    <h3 class="text-2xl font-semibold mb-6 text-center">My Projects</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <div class="bg-white p-4 shadow rounded-xl">
+        <img src="https://via.placeholder.com/400x200" alt="Snake Game" class="rounded mb-3">
+        <h4 class="text-lg font-semibold">Snake Game</h4>
+        <p class="text-sm text-gray-600">Playable Snake game with sound, high scores and mobile controls.</p>
+        <a href="#" class="text-blue-600 text-sm">View on GitHub</a>
+      </div>
+      <div class="bg-white p-4 shadow rounded-xl">
+        <img src="https://via.placeholder.com/400x200" alt="Demo Store" class="rounded mb-3">
+        <h4 class="text-lg font-semibold">Jumia-style Demo Store</h4>
+        <p class="text-sm text-gray-600">E-commerce demo website to showcase products like phone accessories.</p>
+        <a href="#" class="text-blue-600 text-sm">Visit Site</a>
       </div>
     </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-16 px-6 fade-in">
-    <div class="max-w-xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-indigo-400 mb-6">Contact Me</h2>
-      <form action="https://formsubmit.co/olabiyijoshua983@gmail.com" method="POST" class="space-y-4">
-        <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded bg-gray-800 border border-gray-600 text-white" />
-        <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded bg-gray-800 border border-gray-600 text-white" />
-        <textarea name="message" rows="5" placeholder="Your Message" required class="w-full p-3 rounded bg-gray-800 border border-gray-600 text-white"></textarea>
-        <button type="submit" class="bg-indigo-500 hover:bg-indigo-600 text-white px-6 py-2 rounded font-semibold">Send Message</button>
-      </form>
+  </section>  <!-- Services -->  <section id="services" class="py-10 px-6">
+    <h3 class="text-2xl font-semibold mb-6 text-center">Services</h3>
+    <div class="max-w-4xl mx-auto grid gap-6 md:grid-cols-3">
+      <div class="bg-white p-4 shadow rounded-xl">
+        <h4 class="text-lg font-semibold">Web Design</h4>
+        <p class="text-sm text-gray-600">Custom websites for businesses, stores, and creators.</p>
+      </div>
+      <div class="bg-white p-4 shadow rounded-xl">
+        <h4 class="text-lg font-semibold">Game Development</h4>
+        <p class="text-sm text-gray-600">Simple mobile/web games like Snake or Subway Surfers style games.</p>
+      </div>
+      <div class="bg-white p-4 shadow rounded-xl">
+        <h4 class="text-lg font-semibold">Graphic Design</h4>
+        <p class="text-sm text-gray-600">Logos, banners, thumbnails & branding for businesses.</p>
+      </div>
     </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-center text-gray-400 py-4">
+  </section>  <!-- Contact -->  <section id="contact" class="bg-gray-100 py-10 px-6">
+    <h3 class="text-2xl font-semibold text-center mb-6">Contact Me</h3>
+    <div class="text-center">
+      <p class="text-gray-700 mb-2">Let’s build something awesome together.</p>
+      <a href="https://t.me/yourtelegramusername" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-xl hover:bg-blue-700">Message Me on Telegram</a>
+    </div>
+  </section>  <footer class="text-center text-gray-500 py-6">
     &copy; 2025 Jake. All rights reserved.
   </footer>
-
 </body>
-</html>
+</html>@
