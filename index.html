@@ -1,164 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jake's Portfolio</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            color: white;
-            overflow-x: hidden;
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            position: relative;
-            z-index: 1;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 15px;
-            margin-top: 50px;
-            backdrop-filter: blur(5px);
-        }
-
-        h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        nav {
-            margin: 20px 0;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.2em;
-            transition: all 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #ffcc00;
-            text-decoration: underline;
-        }
-
-        button {
-            background: #ffcc00;
-            color: #333;
-            border: none;
-            padding: 12px 30px;
-            font-size: 1.1em;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-
-        button:hover {
-            background: white;
-            transform: scale(1.05);
-        }
-
-        /* Floating bubbles animation */
-        .bubbles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .bubble {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            animation: float linear infinite;
-        }
-
-        @keyframes float {
-            to {
-                transform: translateY(-100vh);
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="bubbles" id="bubbles"></div>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jake | Web & Game Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Animated Gradient Background */
+    body {
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      margin: 0;
+      min-height: 100vh;
+      color: white;
+    }
     
-    <div class="content">
-        <h1>Jake</h1>
-        <nav>
-            <a href="#">Projects</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
-        </nav>
-        
-        <hr>
-        
-        <section>
-            <h2>Hi, I'm Jake</h2>
-            <p>I build stunning websites, games & graphics</p>
-            <button>See My Work</button>
-        </section>
-        
-        <hr>
-        
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I'm a creative web and game developer with experience in building custom websites, games, and graphics. I use tools like HTML, CSS, JavaScript, and design software to bring ideas to life.</p>
-        </section>
-    </div>
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    /* Glass Panel Effect */
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    /* Floating Bubbles */
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      animation: float linear infinite;
+      pointer-events: none;
+    }
+    
+    @keyframes float {
+      to { transform: translateY(-100vh); }
+    }
+  </style>
+</head>
+<body class="font-sans overflow-x-hidden">
+  <!-- Floating Bubbles Container -->
+  <div id="bubbles"></div>
+  
+  <!-- Header -->
+  <header class="p-6 flex justify-between items-center glass-panel shadow-lg">
+    <h1 class="text-2xl font-bold">Jake</h1>
+    <nav>
+      <ul class="flex gap-6 text-sm">
+        <li><a href="#projects" class="hover:underline hover:text-yellow-200">Projects</a></li>
+        <li><a href="#services" class="hover:underline hover:text-yellow-200">Services</a></li>
+        <li><a href="#contact" class="hover:underline hover:text-yellow-200">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <script>
-        // Create floating bubbles
-        function createBubbles() {
-            const bubblesContainer = document.getElementById('bubbles');
-            const bubbleCount = 20;
-            
-            for (let i = 0; i < bubbleCount; i++) {
-                const bubble = document.createElement('div');
-                bubble.classList.add('bubble');
-                
-                // Random size between 10px and 50px
-                const size = Math.random() * 40 + 10;
-                bubble.style.width = `${size}px`;
-                bubble.style.height = `${size}px`;
-                
-                // Random position
-                bubble.style.left = `${Math.random() * 100}vw`;
-                bubble.style.bottom = `-${size}px`;
-                
-                // Random animation duration (10s to 20s)
-                const duration = Math.random() * 10 + 10;
-                bubble.style.animationDuration = `${duration}s`;
-                
-                // Random delay
-                bubble.style.animationDelay = `${Math.random() * 5}s`;
-                
-                bubblesContainer.appendChild(bubble);
-            }
-        }
+  <!-- Hero -->
+  <section class="text-center py-20 px-4 glass-panel rounded-xl mx-4 mt-8">
+    <h2 class="text-4xl font-bold mb-4">Hi, I'm Jake</h2>
+    <p class="text-lg mb-6">I build stunning websites, games & graphics</p>
+    <a href="#projects" class="inline-block bg-white text-blue-600 font-semibold px-6 py-2 rounded-xl hover:bg-gray-200 transition">See My Work</a>
+  </section>
+
+  <!-- About -->
+  <section class="max-w-3xl mx-auto px-6 py-10 glass-panel rounded-xl my-8">
+    <h3 class="text-2xl font-semibold mb-4">About Me</h3>
+    <p>I'm a creative web and game developer with experience in building custom websites, games, and graphics. I use tools like HTML, CSS, JavaScript, and design software to bring ideas to life.</p>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-10 px-6">
+    <h3 class="text-2xl font-semibold mb-6 text-center">My Projects</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <div class="glass-panel p-6 rounded-xl hover:shadow-xl transition">
+        <img src="https://via.placeholder.com/400x200" alt="Jake Snake Game" class="rounded mb-3 w-full">
+        <h4 class="text-lg font-semibold">Jake Snake Game</h4>
+        <p class="text-sm mb-2">A modern version of the classic Snake game — built for both desktop and mobile.</p>
+        <a href="#" class="text-yellow-200 underline text-sm">View on GitHub</a>
+      </div>
+      <div class="glass-panel p-6 rounded-xl hover:shadow-xl transition">
+        <img src="https://via.placeholder.com/400x200" alt="Demo Store" class="rounded mb-3 w-full">
+        <h4 class="text-lg font-semibold">Jumia-style Demo Store</h4>
+        <p class="text-sm mb-2">E-commerce demo website to showcase products like phone accessories.</p>
+        <a href="#" class="text-yellow-200 underline text-sm">Visit Site</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-10 px-6">
+    <h3 class="text-2xl font-semibold mb-6 text-center">Services</h3>
+    <div class="max-w-4xl mx-auto grid gap-6 md:grid-cols-3">
+      <div class="glass-panel p-6 rounded-xl hover:shadow-xl transition">
+        <h4 class="text-lg font-semibold mb-2">Web Design</h4>
+        <p class="text-sm">Custom websites for businesses, stores, and creators.</p>
+      </div>
+      <div class="glass-panel p-6 rounded-xl hover:shadow-xl transition">
+        <h4 class="text-lg font-semibold mb-2">Game Development</h4>
+        <p class="text-sm">Simple mobile/web games like Snake or Subway Surfers style games.</p>
+      </div>
+      <div class="glass-panel p-6 rounded-xl hover:shadow-xl transition">
+        <h4 class="text-lg font-semibold mb-2">Graphic Design</h4>
+        <p class="text-sm">Logos, banners, thumbnails & branding for businesses.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-10 px-6">
+    <h3 class="text-2xl font-semibold text-center mb-6">Contact Me</h3>
+    <div class="text-center glass-panel p-8 rounded-xl max-w-md mx-auto">
+      <p class="mb-4">Let's build something awesome together.</p>
+      <a href="https://t.me/Jake" class="inline-block bg-white text-blue-600 px-6 py-2 rounded-xl hover:bg-gray-200 font-semibold transition">Message Me on Telegram</a>
+    </div>
+  </section>
+
+  <footer class="text-center py-6 glass-panel mt-8">
+    &copy; 2025 Jake. All rights reserved.
+  </footer>
+
+  <script>
+    // Floating Bubbles
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('bubbles');
+      const bubbleCount = 15;
+      
+      for (let i = 0; i < bubbleCount; i++) {
+        const bubble = document.createElement('div');
+        bubble.className = 'bubble';
         
-        // Initialize when page loads
-        window.addEventListener('load', createBubbles);
-    </script>
+        // Random size between 10px and 50px
+        const size = Math.random() * 40 + 10;
+        bubble.style.width = `${size}px`;
+        bubble.style.height = `${size}px`;
+        
+        // Random position and animation
+        bubble.style.left = `${Math.random() * 100}vw`;
+        bubble.style.bottom = `-${size}px`;
+        bubble.style.animationDuration = `${Math.random() * 10 + 10}s`;
+        bubble.style.animationDelay = `${Math.random() * 5}s`;
+        
+        container.appendChild(bubble);
+      }
+    });
+  </script>
 </body>
-</html>
+      </html>
